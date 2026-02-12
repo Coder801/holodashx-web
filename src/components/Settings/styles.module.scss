@@ -1,0 +1,250 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.modal {
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 672px;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background: linear-gradient(to right, #2563eb, #1d4ed8);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerInfo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.headerAvatar {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  padding: 12px;
+
+  svg {
+    width: 32px;
+    height: 32px;
+    color: #ffffff;
+  }
+}
+
+.headerTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.headerUsername {
+  color: #bfdbfe;
+  margin: 0;
+}
+
+.closeButton {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+    color: #ffffff;
+  }
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sectionTitle {
+  color: #111827;
+  font-weight: 600;
+  font-size: 18px;
+  margin: 0 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    color: #2563eb;
+  }
+}
+
+.toggleList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.unitsSelector {
+  background: #f3f4f6;
+  border-radius: 12px;
+  padding: 8px;
+  display: flex;
+  gap: 8px;
+}
+
+.unitButton {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: transparent;
+  color: #4b5563;
+
+  &:hover {
+    color: #111827;
+  }
+}
+
+.unitButtonActive {
+  composes: unitButton;
+  background: #ffffff;
+  color: #2563eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+  border-top: 1px solid #e5e7eb;
+  padding: 24px;
+}
+
+.logoutButton {
+  width: 100%;
+  background: #dc2626;
+  color: #ffffff;
+  padding: 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  &:hover {
+    background: #b91c1c;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.toggleRow {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toggleInfo {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  flex: 1;
+}
+
+.toggleIcon {
+  background: #dbeafe;
+  border-radius: 8px;
+  padding: 8px;
+  margin-top: 4px;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    color: #2563eb;
+  }
+}
+
+.toggleLabel {
+  color: #111827;
+  font-weight: 600;
+}
+
+.toggleDescription {
+  color: #4b5563;
+  font-size: 14px;
+}
+
+.toggleSwitch {
+  position: relative;
+  width: 56px;
+  height: 32px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.toggleSwitchOn {
+  composes: toggleSwitch;
+  background: #2563eb;
+}
+
+.toggleSwitchOff {
+  composes: toggleSwitch;
+  background: #d1d5db;
+}
+
+.toggleKnob {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 24px;
+  height: 24px;
+  background: #ffffff;
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+
+.toggleKnobOn {
+  composes: toggleKnob;
+  transform: translateX(24px);
+}

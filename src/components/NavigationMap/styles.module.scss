@@ -1,0 +1,180 @@
+.wrapper {
+  background: linear-gradient(to bottom, #1f2937, #374151);
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.grid {
+  height: 100%;
+  inset: 0;
+  opacity: 0.2;
+  position: absolute;
+  width: 100%;
+}
+
+.roadSvg {
+  height: 100%;
+  inset: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.destinationMarker {
+  left: 50%;
+  position: absolute;
+  top: 10%;
+  transform: translate(-50%, -50%);
+
+  svg {
+    color: #ef4444;
+    fill: #ef4444;
+    filter: drop-shadow(0 10px 8px rgb(0 0 0 / 4%));
+    height: 48px;
+    width: 48px;
+  }
+}
+
+.carPosition {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  transition: all 100ms;
+}
+
+.carPositionInner {
+  position: relative;
+}
+
+.compassRing {
+  border: 4px solid #3b82f6;
+  border-radius: 50%;
+  inset: -32px;
+  opacity: 0.3;
+  position: absolute;
+}
+
+.carIcon {
+  background: #2563eb;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 25%);
+  padding: 16px;
+
+  svg {
+    color: #fff;
+    height: 32px;
+    width: 32px;
+  }
+}
+
+.speedIndicator {
+  backdrop-filter: blur(4px);
+  background: rgb(0 0 0 / 80%);
+  border: 2px solid #374151;
+  border-radius: 16px;
+  bottom: 24px;
+  left: 24px;
+  padding: 16px 24px;
+  position: absolute;
+}
+
+.speedLabel {
+  color: #9ca3af;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.speedValue {
+  color: #fff;
+  font-size: 36px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+.speedUnit {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.compass {
+  backdrop-filter: blur(4px);
+  background: rgb(0 0 0 / 80%);
+  border: 2px solid #374151;
+  border-radius: 50%;
+  padding: 16px;
+  position: absolute;
+  right: 24px;
+  top: 24px;
+}
+
+.compassInner {
+  height: 64px;
+  position: relative;
+  width: 64px;
+}
+
+.compassN {
+  align-items: center;
+  color: #fff;
+  display: flex;
+  font-size: 18px;
+  font-weight: 700;
+  inset: 0;
+  justify-content: center;
+  position: absolute;
+}
+
+.compassS {
+  align-items: flex-end;
+  color: #6b7280;
+  display: flex;
+  font-size: 12px;
+  inset: 0;
+  justify-content: center;
+  padding-bottom: 4px;
+  position: absolute;
+}
+
+.compassW {
+  align-items: center;
+  color: #6b7280;
+  display: flex;
+  font-size: 12px;
+  inset: 0;
+  justify-content: flex-start;
+  padding-left: 4px;
+  position: absolute;
+}
+
+.compassE {
+  align-items: center;
+  color: #6b7280;
+  display: flex;
+  font-size: 12px;
+  inset: 0;
+  justify-content: flex-end;
+  padding-right: 4px;
+  position: absolute;
+}
+
+.streetMain {
+  background: rgb(0 0 0 / 50%);
+  border-radius: 4px;
+  color: #9ca3af;
+  font-size: 14px;
+  left: 25%;
+  padding: 4px 8px;
+  position: absolute;
+  top: 25%;
+}
+
+.streetOak {
+  background: rgb(0 0 0 / 50%);
+  border-radius: 4px;
+  color: #9ca3af;
+  font-size: 14px;
+  padding: 4px 8px;
+  position: absolute;
+  right: 33%;
+  top: 50%;
+}

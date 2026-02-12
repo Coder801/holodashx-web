@@ -1,0 +1,22 @@
+.app {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: #111827;
+}
+
+.container {
+  flex: 1;
+  position: relative;
+}
+
+.routeInfoOverlay,
+.searchOverlay {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  z-index: 10;
+}

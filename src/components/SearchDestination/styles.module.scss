@@ -1,0 +1,161 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.searchBox {
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.searchInputRow {
+  display: flex;
+  align-items: center;
+  padding: 24px;
+  gap: 16px;
+}
+
+.searchIcon {
+  width: 28px;
+  height: 28px;
+  color: #9ca3af;
+  flex-shrink: 0;
+}
+
+.searchInput {
+  flex: 1;
+  font-size: 24px;
+  outline: none;
+  color: #111827;
+  border: none;
+  background: transparent;
+
+  &::placeholder {
+    color: #9ca3af;
+  }
+}
+
+.suggestions {
+  border-top: 1px solid #e5e7eb;
+}
+
+.suggestionButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-align: left;
+  border-bottom: 1px solid #f3f4f6;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background: #f9fafb;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+    color: #9ca3af;
+    flex-shrink: 0;
+  }
+
+  span {
+    font-size: 20px;
+    color: #111827;
+  }
+}
+
+.recentPlaces {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+}
+
+.recentHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    color: #4b5563;
+  }
+
+  h3 {
+    color: #4b5563;
+    font-weight: 600;
+    margin: 0;
+  }
+}
+
+.recentList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.placeButton {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 16px;
+  transition: background-color 0.2s;
+  text-align: left;
+
+  &:hover {
+    background: #f3f4f6;
+  }
+}
+
+.placeIconWrapper {
+  background: #e5e7eb;
+  border-radius: 12px;
+  padding: 12px;
+  flex-shrink: 0;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    color: #374151;
+  }
+}
+
+.placeInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.placeName {
+  color: #111827;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.placeAddress {
+  color: #6b7280;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

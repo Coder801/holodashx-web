@@ -1,0 +1,129 @@
+.wrapper {
+  background: rgba(17, 24, 39, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 2px solid #374151;
+}
+
+.turnInstruction {
+  padding: 24px;
+  border-bottom: 1px solid #374151;
+}
+
+.turnRow {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.turnIcon {
+  background: #2563eb;
+  border-radius: 16px;
+  padding: 16px;
+  flex-shrink: 0;
+
+  svg {
+    width: 48px;
+    height: 48px;
+    color: #ffffff;
+    stroke-width: 3;
+  }
+}
+
+.turnInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.turnDistance {
+  color: #9ca3af;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.turnText {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tripInfo {
+  padding: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.tripCell {
+  text-align: center;
+}
+
+.tripCellMiddle {
+  composes: tripCell;
+  border-left: 1px solid #374151;
+  border-right: 1px solid #374151;
+}
+
+.tripLabel {
+  color: #9ca3af;
+  font-size: 14px;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.tripValue {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.destination {
+  padding: 0 24px 24px;
+}
+
+.destinationBox {
+  background: #1f2937;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  > svg {
+    width: 20px;
+    height: 20px;
+    color: #3b82f6;
+    flex-shrink: 0;
+  }
+}
+
+.destinationInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.destinationLabel {
+  color: #9ca3af;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.destinationName {
+  color: #ffffff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
