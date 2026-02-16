@@ -1,0 +1,40 @@
+:root {
+  // Gray scale
+  --color-gray-950: #030712;
+  --color-gray-900: #111827;
+  --color-gray-800: #1f2937;
+  --color-gray-700: #374151;
+  --color-gray-600: #4b5563;
+  --color-gray-500: #6b7280;
+  --color-gray-400: #9ca3af;
+  --color-gray-300: #d1d5db;
+  --color-gray-200: #e5e7eb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-50: #f9fafb;
+
+  // Blue (primary)
+  --color-blue-700: #1d4ed8;
+  --color-blue-600: #2563eb;
+  --color-blue-500: #3b82f6;
+  --color-blue-200: #bfdbfe;
+  --color-blue-100: #dbeafe;
+
+  // Red (danger)
+  --color-red-700: #b91c1c;
+  --color-red-600: #dc2626;
+  --color-red-500: #ef4444;
+
+  // Base
+  --color-white: #fff;
+  --color-black: #000;
+
+  // Shadows & overlays
+  --shadow-sm: rgb(0 0 0 / 10%);
+  --shadow-md: rgb(0 0 0 / 25%);
+  --overlay-dark: rgb(0 0 0 / 60%);
+  --overlay-heavy: rgb(0 0 0 / 80%);
+  --glass-light: rgb(255 255 255 / 20%);
+  --glass-medium: rgb(255 255 255 / 30%);
+  --glass-heavy: rgb(255 255 255 / 95%);
+  --surface-dark: rgb(17 24 39 / 95%);
+}

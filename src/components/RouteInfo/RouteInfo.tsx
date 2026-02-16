@@ -1,20 +1,13 @@
-import { useEffect, useState } from "react";
 import { ArrowUp, Clock, Navigation2 } from "lucide-react";
-import type { RouteInfoProps } from "./types";
+
 import styles from "./styles.module.scss";
+import type { RouteInfoProps } from "./types";
 
-export const RouteInfo = ({ destination }: RouteInfoProps) => {
-  const [distance, setDistance] = useState(5.8);
-  const [eta, setEta] = useState(12);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setDistance((prev) => Math.max(0, prev - 0.05));
-      setEta((prev) => Math.max(0, prev - 0.1));
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
+export const RouteInfo = ({ destination, routeData }: RouteInfoProps) => {
+  const distanceKm = routeData?.distanceKm ?? 0;
+  const durationMin = routeData?.durationMin ?? 0;
+  const turnInstruction = routeData?.turnInstruction ?? "";
+  const turnDistance = routeData?.turnDistance ?? "";
 
   return (
     <div className={styles.wrapper}>
@@ -24,8 +17,8 @@ export const RouteInfo = ({ destination }: RouteInfoProps) => {
             <ArrowUp />
           </div>
           <div className={styles.turnInfo}>
-            <div className={styles.turnDistance}>In 400m</div>
-            <div className={styles.turnText}>Continue on Main Street</div>
+            <div className={styles.turnDistance}>{turnDistance}</div>
+            <div className={styles.turnText}>{turnInstruction}</div>
           </div>
         </div>
       </div>
@@ -33,19 +26,25 @@ export const RouteInfo = ({ destination }: RouteInfoProps) => {
       <div className={styles.tripInfo}>
         <div className={styles.tripCell}>
           <div className={styles.tripLabel}>Distance</div>
-          <div className={styles.tripValue}>{distance.toFixed(1)} km</div>
+          <div className={styles.tripValue}>
+            {distanceKm >= 1
+              ? `${distanceKm.toFixed(1)} km`
+              : `${Math.round(distanceKm * 1000)} m`}
+          </div>
         </div>
         <div className={styles.tripCellMiddle}>
           <div className={styles.tripLabel}>
             <Clock />
             ETA
           </div>
-          <div className={styles.tripValue}>{Math.floor(eta)} min</div>
+          <div className={styles.tripValue}>{Math.ceil(durationMin)} min</div>
         </div>
         <div className={styles.tripCell}>
           <div className={styles.tripLabel}>Arrival</div>
           <div className={styles.tripValue}>
-            {new Date(Date.now() + eta * 60000).toLocaleTimeString("en-US", {
+            {new Date(
+              Date.now() + durationMin * 60000,
+            ).toLocaleTimeString("en-US", {
               hour: "numeric",
               minute: "2-digit",
               hour12: true,

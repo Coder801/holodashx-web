@@ -1,5 +1,5 @@
 .wrapper {
-  background: linear-gradient(to bottom, #1f2937, #374151);
+  background: linear-gradient(to bottom, var(--color-gray-800), var(--color-gray-700));
   height: 100%;
   position: relative;
   width: 100%;
@@ -27,8 +27,8 @@
   transform: translate(-50%, -50%);
 
   svg {
-    color: #ef4444;
-    fill: #ef4444;
+    color: var(--color-red-500);
+    fill: var(--color-red-500);
     filter: drop-shadow(0 10px 8px rgb(0 0 0 / 4%));
     height: 48px;
     width: 48px;
@@ -46,7 +46,7 @@
 }
 
 .compassRing {
-  border: 4px solid #3b82f6;
+  border: 4px solid var(--color-blue-500);
   border-radius: 50%;
   inset: -32px;
   opacity: 0.3;
@@ -54,14 +54,14 @@
 }
 
 .carIcon {
-  background: #2563eb;
-  border: 4px solid #fff;
+  background: var(--color-blue-600);
+  border: 4px solid var(--color-white);
   border-radius: 50%;
   box-shadow: 0 25px 50px -12px rgb(0 0 0 / 25%);
   padding: 16px;
 
   svg {
-    color: #fff;
+    color: var(--color-white);
     height: 32px;
     width: 32px;
   }
@@ -69,8 +69,8 @@
 
 .speedIndicator {
   backdrop-filter: blur(4px);
-  background: rgb(0 0 0 / 80%);
-  border: 2px solid #374151;
+  background: var(--overlay-heavy);
+  border: 2px solid var(--color-gray-700);
   border-radius: 16px;
   bottom: 24px;
   left: 24px;
@@ -79,27 +79,27 @@
 }
 
 .speedLabel {
-  color: #9ca3af;
+  color: var(--color-gray-400);
   font-size: 14px;
   margin-bottom: 4px;
 }
 
 .speedValue {
-  color: #fff;
+  color: var(--color-white);
   font-size: 36px;
   font-variant-numeric: tabular-nums;
   font-weight: 700;
 }
 
 .speedUnit {
-  color: #9ca3af;
+  color: var(--color-gray-400);
   font-size: 14px;
 }
 
 .compass {
   backdrop-filter: blur(4px);
-  background: rgb(0 0 0 / 80%);
-  border: 2px solid #374151;
+  background: var(--overlay-heavy);
+  border: 2px solid var(--color-gray-700);
   border-radius: 50%;
   padding: 16px;
   position: absolute;
@@ -115,7 +115,7 @@
 
 .compassN {
   align-items: center;
-  color: #fff;
+  color: var(--color-white);
   display: flex;
   font-size: 18px;
   font-weight: 700;
@@ -126,7 +126,7 @@
 
 .compassS {
   align-items: flex-end;
-  color: #6b7280;
+  color: var(--color-gray-500);
   display: flex;
   font-size: 12px;
   inset: 0;
@@ -137,7 +137,7 @@
 
 .compassW {
   align-items: center;
-  color: #6b7280;
+  color: var(--color-gray-500);
   display: flex;
   font-size: 12px;
   inset: 0;
@@ -148,7 +148,7 @@
 
 .compassE {
   align-items: center;
-  color: #6b7280;
+  color: var(--color-gray-500);
   display: flex;
   font-size: 12px;
   inset: 0;
@@ -160,7 +160,7 @@
 .streetMain {
   background: rgb(0 0 0 / 50%);
   border-radius: 4px;
-  color: #9ca3af;
+  color: var(--color-gray-400);
   font-size: 14px;
   left: 25%;
   padding: 4px 8px;
@@ -171,7 +171,7 @@
 .streetOak {
   background: rgb(0 0 0 / 50%);
   border-radius: 4px;
-  color: #9ca3af;
+  color: var(--color-gray-400);
   font-size: 14px;
   padding: 4px 8px;
   position: absolute;

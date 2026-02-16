@@ -1,8 +1,26 @@
-import { MapPin, Search } from "lucide-react";
+import { Clock, MapPin, Search } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import styles from "./styles.module.scss";
 import type { SearchDestinationProps } from "./types";
+
+const RECENT_KEY = "holodashx:recent-destinations";
+const MAX_RECENT = 3;
+
+function getRecent(): string[] {
+  try {
+    const raw = localStorage.getItem(RECENT_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveRecent(destination: string) {
+  const recent = getRecent().filter((d) => d !== destination);
+  recent.unshift(destination);
+  localStorage.setItem(RECENT_KEY, JSON.stringify(recent.slice(0, MAX_RECENT)));
+}
 
 export const SearchDestination = ({
   onStartNavigation,
@@ -11,12 +29,15 @@ export const SearchDestination = ({
   const [predictions, setPredictions] = useState<
     google.maps.places.AutocompletePrediction[]
   >([]);
+  const [recent, setRecent] = useState<string[]>(getRecent);
 
   const filteredSuggestions = predictions.map(
     (prediction) => (prediction as any)?.placePrediction?.text?.text || "",
   );
 
   const handleSelectDestination = (destination: string) => {
+    saveRecent(destination);
+    setRecent(getRecent());
     setSearch("");
     onStartNavigation(destination);
   };
@@ -24,26 +45,35 @@ export const SearchDestination = ({
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setSearch(value);
-
-    fetch("https://places.googleapis.com/v1/places:autocomplete", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "X-Goog-Api-Key": "AIzaSyByCY6SUZWeytjizQ4Y4I29rteq6f4kdzI",
-      },
-      body: JSON.stringify({
-        input: value,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setPredictions(data.suggestions || []);
-      });
+    if (!value) {
+      setPredictions([]);
+    }
   };
 
   useEffect(() => {
-    console.log("Predictions:", predictions);
-  }, [predictions]);
+    if (!search) {
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      fetch("https://places.googleapis.com/v1/places:autocomplete", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Goog-Api-Key": import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
+        },
+        body: JSON.stringify({
+          input: search,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setPredictions(data.suggestions || []);
+        });
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [search]);
 
   return (
     <div className={styles.wrapper}>
@@ -75,31 +105,30 @@ export const SearchDestination = ({
         )}
       </div>
 
-      {/* {!predictions.length && (
+      {!search && recent.length > 0 && (
         <div className={styles.recentPlaces}>
           <div className={styles.recentHeader}>
             <Clock />
-            <h3>Recent & Favorites</h3>
+            <h3>Recent</h3>
           </div>
           <div className={styles.recentList}>
-            {recentPlaces.map((place, index) => (
+            {recent.map((place, index) => (
               <button
                 key={index}
-                onClick={() => handleSelectDestination(place.name)}
+                onClick={() => handleSelectDestination(place)}
                 className={styles.placeButton}
               >
                 <div className={styles.placeIconWrapper}>
-                  <place.icon />
+                  <Clock />
                 </div>
                 <div className={styles.placeInfo}>
-                  <div className={styles.placeName}>{place.name}</div>
-                  <div className={styles.placeAddress}>{place.address}</div>
+                  <div className={styles.placeName}>{place}</div>
                 </div>
               </button>
             ))}
           </div>
         </div>
-      )} */}
+      )}
     </div>
   );
 };

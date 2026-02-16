@@ -1,50 +1,50 @@
 .wrapper {
-  height: 100vh;
-  width: 100vw;
-  background: linear-gradient(to bottom right, #2563eb, #1d4ed8, #111827);
-  display: flex;
   align-items: center;
+  background: linear-gradient(to bottom right, var(--color-blue-600), var(--color-blue-700), var(--color-gray-900));
+  display: flex;
+  height: 100vh;
   justify-content: center;
   padding: 24px;
+  width: 100vw;
 }
 
 .card {
-  background: #ffffff;
+  background: var(--color-white);
   border-radius: 24px;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 25px 50px -12px var(--shadow-md);
+  max-width: 448px;
   padding: 32px;
   width: 100%;
-  max-width: 448px;
 }
 
 .header {
-  text-align: center;
   margin-bottom: 32px;
+  text-align: center;
 }
 
 .logoIcon {
-  background: #2563eb;
+  background: var(--color-blue-600);
   border-radius: 50%;
-  padding: 16px;
   display: inline-flex;
   margin-bottom: 16px;
+  padding: 16px;
 
   svg {
-    width: 48px;
+    color: var(--color-white);
     height: 48px;
-    color: #ffffff;
+    width: 48px;
   }
 }
 
 .title {
+  color: var(--color-gray-900);
   font-size: 30px;
   font-weight: 700;
-  color: #111827;
   margin: 0 0 8px;
 }
 
 .subtitle {
-  color: #4b5563;
+  color: var(--color-gray-600);
   margin: 0;
 }
 
@@ -55,8 +55,8 @@
 }
 
 .fieldLabel {
+  color: var(--color-gray-700);
   display: block;
-  color: #374151;
   font-weight: 600;
   margin-bottom: 8px;
 }
@@ -65,46 +65,46 @@
   position: relative;
 
   svg {
-    position: absolute;
+    color: var(--color-gray-400);
+    height: 20px;
     left: 16px;
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
     width: 20px;
-    height: 20px;
-    color: #9ca3af;
   }
 }
 
 .input {
-  width: 100%;
-  padding: 16px 16px 16px 48px;
+  border: 2px solid var(--color-gray-200);
   border-radius: 12px;
-  border: 2px solid #e5e7eb;
-  outline: none;
-  font-size: 18px;
-  transition: border-color 0.2s;
   box-sizing: border-box;
+  font-size: 18px;
+  outline: none;
+  padding: 16px 16px 16px 48px;
+  transition: border-color 0.2s;
+  width: 100%;
 
   &:focus {
-    border-color: #2563eb;
+    border-color: var(--color-blue-600);
   }
 }
 
 .submitButton {
-  width: 100%;
-  background: #2563eb;
-  color: #ffffff;
-  padding: 16px;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 18px;
+  background: var(--color-blue-600);
   border: none;
+  border-radius: 12px;
+  box-shadow: 0 10px 15px -3px var(--shadow-sm);
+  color: var(--color-white);
   cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 16px;
   transition: background-color 0.2s;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  width: 100%;
 
   &:hover {
-    background: #1d4ed8;
+    background: var(--color-blue-700);
   }
 }
 
@@ -117,44 +117,44 @@
 }
 
 .dividerBorder {
-  position: absolute;
-  inset: 0;
-  display: flex;
   align-items: center;
+  display: flex;
+  inset: 0;
+  position: absolute;
 }
 
 .dividerBorderInner {
+  border-top: 1px solid var(--color-gray-300);
   width: 100%;
-  border-top: 1px solid #d1d5db;
 }
 
 .dividerText {
-  position: relative;
   display: flex;
-  justify-content: center;
   font-size: 14px;
+  justify-content: center;
+  position: relative;
 }
 
 .dividerTextInner {
+  background: var(--color-white);
+  color: var(--color-gray-500);
   padding: 0 8px;
-  background: #ffffff;
-  color: #6b7280;
 }
 
 .guestButton {
-  margin-top: 16px;
-  width: 100%;
-  background: #f3f4f6;
-  color: #111827;
-  padding: 16px;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 18px;
+  background: var(--color-gray-100);
   border: none;
+  border-radius: 12px;
+  color: var(--color-gray-900);
   cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 16px;
+  padding: 16px;
   transition: background-color 0.2s;
+  width: 100%;
 
   &:hover {
-    background: #e5e7eb;
+    background: var(--color-gray-200);
   }
 }

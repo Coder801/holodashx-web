@@ -1,17 +1,18 @@
 import {
-  X,
-  User,
   Bell,
-  Map,
-  Volume2,
-  Moon,
   Globe,
-  Navigation2,
   LogOut,
+  Map,
+  Moon,
+  Navigation2,
+  User,
+  Volume2,
+  X,
 } from "lucide-react";
 import { useState } from "react";
-import type { SettingsProps, SettingToggleProps } from "./types";
+
 import styles from "./styles.module.scss";
+import type { SettingsProps, SettingToggleProps } from "./types";
 
 export const Settings = ({ onClose, onLogout, username }: SettingsProps) => {
   const [voiceGuidance, setVoiceGuidance] = useState(true);

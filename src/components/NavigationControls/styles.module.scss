@@ -1,63 +1,91 @@
 .wrapper {
-  background: #030712;
-  border-top: 1px solid #1f2937;
+  background: var(--color-gray-950);
+  border-top: 1px solid var(--color-gray-800);
   padding: 16px 24px;
 }
 
 .inner {
-  display: flex;
   align-items: center;
-  justify-content: space-between;
+  display: flex;
   gap: 16px;
-  max-width: 1280px;
+  justify-content: space-between;
   margin: 0 auto;
+  max-width: 1280px;
 }
 
 .iconButton {
-  background: #1f2937;
-  border-radius: 16px;
-  padding: 16px;
+  background: var(--color-gray-800);
   border: none;
+  border-radius: 16px;
   cursor: pointer;
+  padding: 16px;
   transition: background-color 0.2s;
 
   &:hover {
-    background: #374151;
+    background: var(--color-gray-700);
   }
 
   svg {
-    width: 28px;
+    color: var(--color-white);
     height: 28px;
-    color: #ffffff;
+    width: 28px;
   }
 }
 
 .centerControls {
-  display: flex;
   align-items: center;
+  display: flex;
   gap: 16px;
 }
 
-.endRouteButton {
-  background: #dc2626;
-  color: #ffffff;
-  padding: 16px 32px;
-  border-radius: 16px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  display: flex;
+.startRouteButton {
   align-items: center;
+  background: var(--color-blue-600);
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 10px 15px -3px var(--shadow-sm);
+  color: var(--color-white);
+  cursor: pointer;
+  display: flex;
   gap: 12px;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding: 16px 32px;
+  transition: background-color 0.2s;
 
   &:hover {
-    background: #b91c1c;
+    background: var(--color-blue-700);
   }
 
   svg {
-    width: 24px;
     height: 24px;
+    width: 24px;
+  }
+
+  span {
+    font-size: 20px;
+    font-weight: 600;
+  }
+}
+
+.endRouteButton {
+  align-items: center;
+  background: var(--color-red-600);
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 10px 15px -3px var(--shadow-sm);
+  color: var(--color-white);
+  cursor: pointer;
+  display: flex;
+  gap: 12px;
+  padding: 16px 32px;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background: var(--color-red-700);
+  }
+
+  svg {
+    height: 24px;
+    width: 24px;
   }
 
   span {
@@ -67,14 +95,14 @@
 }
 
 .welcomeText {
-  display: flex;
   align-items: center;
+  color: var(--color-gray-400);
+  display: flex;
   gap: 12px;
-  color: #9ca3af;
 
   svg {
-    width: 20px;
     height: 20px;
+    width: 20px;
   }
 
   span {
@@ -83,7 +111,7 @@
 }
 
 .rightControls {
-  display: flex;
   align-items: center;
+  display: flex;
   gap: 12px;
 }

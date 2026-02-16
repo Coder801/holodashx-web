@@ -1,10 +1,20 @@
-import { Menu, Settings, User, Volume2, X } from "lucide-react";
+import {
+  Ban,
+  Menu,
+  Navigation,
+  Settings,
+  User,
+  Volume2,
+  X,
+} from "lucide-react";
 
 import styles from "./styles.module.scss";
 import type { NavigationControlsProps } from "./types";
 
 export const NavigationControls = ({
   isNavigating,
+  hasRoute,
+  onStartNavigation,
   onStopNavigation,
   onOpenSettings,
   username,
@@ -25,6 +35,23 @@ export const NavigationControls = ({
               <X />
               <span>End Route</span>
             </button>
+          ) : hasRoute ? (
+            <>
+              <button
+                onClick={onStartNavigation}
+                className={styles.startRouteButton}
+              >
+                <Navigation />
+                <span>Start</span>
+              </button>
+              <button
+                onClick={onStartNavigation}
+                className={styles.startRouteButton}
+              >
+                <Ban />
+                <span>Cancel</span>
+              </button>
+            </>
           ) : (
             <div className={styles.welcomeText}>
               <User />

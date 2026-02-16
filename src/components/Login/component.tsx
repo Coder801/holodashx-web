@@ -1,7 +1,8 @@
+import { Lock, Navigation,User } from 'lucide-react';
 import { useState } from 'react';
-import { User, Lock, Navigation } from 'lucide-react';
-import type { LoginProps } from './types';
+
 import styles from './styles.module.scss';
+import type { LoginProps } from './types';
 
 export function Login({ onLogin }: LoginProps) {
   const [username, setUsername] = useState('');

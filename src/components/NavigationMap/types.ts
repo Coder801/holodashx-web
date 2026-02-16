@@ -1,5 +1,12 @@
+export type RouteData = {
+  distanceKm: number;
+  durationMin: number;
+  turnInstruction: string;
+  turnDistance: string;
+};
+
 export type NavigationMapProps = {
   isNavigating: boolean;
-  isLoaded: boolean;
-  // destination: string;
+  destination: string;
+  onRouteData?: (data: RouteData) => void;
 };
